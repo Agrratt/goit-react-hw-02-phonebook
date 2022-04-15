@@ -65,6 +65,5 @@ render() {
 };
 
 Form.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.number
+  onFormSubmit: PropTypes.func
 }

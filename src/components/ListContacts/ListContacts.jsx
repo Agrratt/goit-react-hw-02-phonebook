@@ -6,14 +6,17 @@ export const ListContacts = ({ item, deleteContact }) => {
   return (
     <>
       <ContactsList>
-        {item.map(({ id, name, number }) => (
-          <ItemContacts 
-            key={id}
-            name={name}
-            number={number}
-            onClick={() => deleteContact(id)}
-          />
-        )
+        {item.map(({ id, name, number }) => {
+          return (
+            <ItemContacts
+              key={id}
+              id={id}
+              name={name}
+              number={number}
+              deleteContact={deleteContact}
+            />
+          );
+        }
 
         )}
       </ContactsList>
@@ -23,6 +26,12 @@ export const ListContacts = ({ item, deleteContact }) => {
 };
   
 ListContacts.propTypes = {
-  name: PropTypes.string,
-  number: PropTypes.number
+  item: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  deleteContact: PropTypes.func
 };

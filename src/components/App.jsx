@@ -22,9 +22,16 @@ export class App extends Component {
       name,
       number,
     };
-    this.setState(({contacts}) => ({
+    this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
-    }))
+    }));
+
+    this.state.contacts.map(itemContact => {
+      if (itemContact.name === contact.name) {
+        return alert(`${contact.name} is already in contacts`);
+      }
+      return itemContact;
+    });
     
   };
 
