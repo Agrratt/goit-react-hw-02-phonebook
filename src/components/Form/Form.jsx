@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import {FormContainer, Label, InputName, ButtonAdd} from 'components/Form/Form.styled'
 
 export class Form extends Component {
-    state = {
-        name: '',
-        number: ''
-    };
+  state = {
+      name: '',
+      number: ''
+  };
+  
+  static propTypes = {
+    onFormSubmit: PropTypes.func
+  };
 
     reset = () => {
         this.setState({
@@ -25,7 +29,7 @@ export class Form extends Component {
     handleChange = evt => {
         const { name, value } = evt.currentTarget;
         this.setState({ [name]: value });
-    };
+  };
 
 render() {
     return (
@@ -64,6 +68,6 @@ render() {
 
 };
 
-Form.propTypes = {
-  onFormSubmit: PropTypes.func
-}
+// Form.propTypes = {
+//   onFormSubmit: PropTypes.func
+// }
