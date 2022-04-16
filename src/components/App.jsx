@@ -4,6 +4,7 @@ import { Form } from 'components/Form/Form';
 import { ListContacts } from 'components/ListContacts/ListContacts';
 import { Filter } from 'components/Filter/Filter';
 import {Container} from 'components/App.styled';
+import { ItemContacts } from "./ItemContacts/ItemContacts";
 
 export class App extends Component {
   state = {
@@ -22,16 +23,20 @@ export class App extends Component {
       name,
       number,
     };
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
 
-    this.state.contacts.map(itemContact => {
-      if (itemContact.name === contact.name) {
+    this.setState(({ contacts }) => {
+      if (contacts.some((contact) => contact.name === name)) {
         return alert(`${contact.name} is already in contacts`);
       }
-      return itemContact;
+      return {contacts: [contact, ...contacts]}
     });
+
+    // this.state.contacts.map(itemContact => {
+    //   if (itemContact.name === contact.name) {
+    //     return alert(`${contact.name} is already in contacts`);
+    //   }
+    //   return itemContact;
+    // });
     
   };
 
