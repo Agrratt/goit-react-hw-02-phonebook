@@ -4,7 +4,6 @@ import { Form } from 'components/Form/Form';
 import { ListContacts } from 'components/ListContacts/ListContacts';
 import { Filter } from 'components/Filter/Filter';
 import {Container} from 'components/App.styled';
-import { ItemContacts } from "./ItemContacts/ItemContacts";
 
 export class App extends Component {
   state = {
@@ -62,7 +61,6 @@ export class App extends Component {
     const { filter } = this.state;
     const visibleContacts = this.onSearchByName();
 
-
     return (
       
       <Container>
@@ -81,7 +79,4 @@ export class App extends Component {
     
     )
   }
-  
 };
-
-

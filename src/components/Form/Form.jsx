@@ -12,12 +12,12 @@ export class Form extends Component {
     onFormSubmit: PropTypes.func
   };
 
-    reset = () => {
-        this.setState({
-            name: '',
-            number: ''
-        });
-    }
+  reset = () => {
+      this.setState({
+          name: '',
+          number: ''
+      });
+  }
 
     handleSubmit = evt => {
         evt.preventDefault();
