@@ -41,9 +41,7 @@ export class App extends Component {
   };
 
   onChangeFilter = (evt) => {
-    // evt.preventDefault();
-
-    this.setState({ filter: evt.currentTarget.value });
+      this.setState({ filter: evt.currentTarget.value });
   };
 
   onSearchByName = () => {
